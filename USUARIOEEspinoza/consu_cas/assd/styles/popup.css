@@ -1,0 +1,520 @@
+
+
+/* Fondo con imagen difuminada */
+body {
+    font-family: Arial, sans-serif;
+    padding: 15px;
+    width: 320px;
+    background: url('/images/icon.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(100deg, #000000, #00000020);
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fefefe;
+    background-size: auto;
+    background-position: center;
+}
+
+.contenedor {
+    background-image: linear-gradient(80deg, #060671ab, #000000cb);
+
+    background-size: contain;
+    padding: 35px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 285px;
+    box-shadow: 1px 0px 10px rgba(153, 151, 149, 0.997);
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(49, 186, 46);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    margin-top: 11px;
+    font-weight: bold;
+    color: rgb(253, 253, 253);
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Selects y inputs alineados del mismo tamaño */
+select,
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.9);
+    color: rgb(17, 6, 219);
+    font-size: 14px;
+    outline: none;
+    display: block;
+    text-align: center;
+}
+
+
+/* Contenedor para cada fila */
+.campo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Estilos para todas las etiquetas (MISMO ANCHO) */
+.campo label {
+    flex: 1;
+    font-weight: bold;
+    color: rgba(253, 253, 253, 0.601);
+    font-size: 14px;
+    text-align: left;
+    min-width: 120px;
+    /* Asegura que todas las etiquetas tengan el mismo tamaño */
+}
+
+/* Estilos para los selects e inputs */
+.campo select,
+.campo input {
+    flex: 2;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.696);
+    color: #333;
+    font-size: 14px;
+    outline: none;
+    text-align: center;
+}
+
+/* Eliminar flechas en los inputs tipo number */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+
+
+/* Estilo para los botones */
+.btn-guardar {
+    background-color: green;
+    color: white;
+}
+
+.btn-detener {
+    background-color: #ccc; /* Color cuando está deshabilitado */
+    color: #777; /* Texto apagado */
+    cursor: not-allowed;
+}
+
+/* Estilo cuando el botón está en ejecución */
+.ejecutando {
+    background-color: #ccc; /* Color cuando está deshabilitado */
+    color: #777; /* Texto apagado */
+    cursor: not-allowed;
+}
+
+/* Estilo para el botón detener cuando está activo */
+.detener-activo {
+    background-color: red; /* Color cuando está habilitado */
+    color: white; /* Texto blanco */
+    cursor: pointer;
+}
+
+/* Efecto hover para los botones cuando están habilitados */
+button:not(:disabled):hover {
+    background: linear-gradient(to right, #ff6600, #ff3300);
+    transform: scale(1.05);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Efecto cuando el botón es presionado */
+button:active {
+    background: #800000;
+    transform: scale(0.98);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para botones deshabilitados */
+button:disabled {
+    background-color: #ccc;
+    color: #777;
+    cursor: not-allowed;
+}
+
+/* Botón con estilo básico */
+button {
+    border: none;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.955);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.telegram-background {
+    background-image: url('https://mlfsyec2oz9a.i.optimole.com/cb:f7Tm~49a4e/w:auto/h:auto/q:mauto/f:best/ig:avif/https://www.mediodigital.com.uy/wp-content/uploads/2023/08/Guia-Para-Instalar-Chatbot-en-Sitio-Web-Paso-a-Paso.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    /* Ajusta la opacidad según sea necesario */
+}
+
+.telegram-content {
+    z-index: 1;
+    color: #fdfdff;
+    text-align: center;
+}
+
+
+.social-media {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.social-media h2 {
+    margin-bottom: 10px;
+    font-size: 1.0em;
+}
+
+.social-media .icons a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-media .icons a i {
+    transition: transform 0.3s ease;
+}
+
+.social-media .icons a:hover i {
+    transform: scale(1.2);
+}
+
+/* Colores originales para los iconos de redes sociales */
+.fab.fa-facebook {
+    color: #3b5998;
+    /* Color oficial de Facebook */
+}
+
+.fab.fa-instagram {
+    color: #E1306C;
+    /* Color oficial de Instagram */
+}
+
+.fab.fa-whatsapp {
+    color: #25D366;
+    /* Color oficial de WhatsApp */
+}
+
+.fab.fa-facebook-messenger {
+    color: #0078FF;
+    /* Color oficial de Messenger */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.footer-text {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.footer-text p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    line-height: 1.4em;
+}
+
+.footer-text p:first-child {
+    font-weight: bold;
+}
+
+.footer-logo {
+    margin-left: 10px;
+}
+
+.logo-img {
+    height: 40px;
+    /* Ajusta el tamaño del logo según necesites */
+    width: auto;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.footer-text {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.footer-text p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    line-height: 1.4em;
+}
+
+.footer-text p:first-child {
+    font-weight: bold;
+}
+
+.footer-logo {
+    margin-left: 10px;
+}
+
+.logo-img {
+    height: 40px;
+    /* Ajusta el tamaño del logo según necesites */
+    width: auto;
+}
+
+/* Alineación en pantallas pequeñas */
+@media (max-width: 991px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-text {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .footer-logo {
+        margin-left: 0;
+    }
+}
+
+
+footer p {
+    margin: 5px 0;
+    font-size: .9em;
+}
+
+footer a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+footer {
+    /* background: rgba(3, 3, 3, 0.546) url('/images/iconr.png') no-repeat center center; */
+    background-size: contain;
+    background-color: rgba(7, 2, 35, 0.485);
+    color: #fff;
+    padding: 0px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Alineación en pantallas pequeñas */
+@media (max-width: 991px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-text {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .footer-logo {
+        margin-left: 0;
+    }
+}
+
+footer p {
+    margin: 4px 0;
+    font-size: .7em;
+}
+
+footer a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+.copyright_text {
+    text-align: right;
+    font-size: 0.9em;
+    color: #bbb;
+    margin: 0;
+}
+
+.copyright_text a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.copyright_text a:hover {
+    color: #ddd;
+    text-decoration: underline;
+}
+
+/* Espaciado adecuado para dispositivos grandes */
+@media (min-width: 992px) {
+    .copyright_text {
+        padding-right: 15px;
+    }
+}
+
+/* Estilo en pantallas más pequeñas */
+@media (max-width: 991px) {
+    .copyright_text {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+header {
+    background: rgba(3, 3, 3, 0.546) url('/images/icon.png') no-repeat center center;
+   
+    background-size: contain;
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 290px;
+    box-shadow: 0px 0px 50px rgba(254, 254, 254, 0.559);
+    text-align: unset;
+
+
+}
+
+
+
+
+.copyright_text {
+    text-align: right;
+    font-size: 0.9em;
+    color: rgb(187, 187, 187);
+    margin: 0;
+    padding-right: 15px;
+    /* Espaciado a la derecha */
+}
+
+.copyright_text a {
+    color: rgb(39, 17, 211);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.copyright_text a:hover {
+    color: #ddd;
+    text-decoration: underline;
+}
+
+
+
+/* Asegura que el texto esté alineado a la derecha en pantallas grandes */
+@media (min-width: 992px) {
+    .copyright_text {
+        text-align: right;
+        padding-right: 15px;
+    }
+}
+
+/* Alinea el texto al centro en pantallas más pequeñas */
+@media (max-width: 991px) {
+    .copyright_text {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+.copyright_text {
+    text-align: right;
+    font-size: 0.9em;
+    color: #bbb;
+    margin: 0;
+    padding-right: 15px;
+    /* Espaciado a la derecha */
+}
+
+.copyright_text a {
+    color: rgb(39, 17, 211);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.copyright_text a:hover {
+    color: #ddd;
+    text-decoration: underline;
+}
+
+/* Asegura que el texto esté alineado a la derecha en pantallas grandes */
+@media (min-width: 992px) {
+    .copyright_text {
+        text-align: right;
+        padding-right: 15px;
+    }
+}
+
+/* Alinea el texto al centro en pantallas más pequeñas */
+@media (max-width: 991px) {
+    .copyright_text {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
