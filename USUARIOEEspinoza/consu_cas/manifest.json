@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "AutoAgenda CONSULAR_CAS Visa",
+    "version": "1.0",
+    "description": "Extensión para automatizar la programación de citas .",
+    "permissions": [
+        "storage",
+        "scripting",
+        "activeTab",
+        "declarativeContent",
+        "webRequest",
+        "webRequestBlocking",
+        "host_permissions"
+    ],
+    "host_permissions": [
+        "https://ais.usvisa-info.com/*"
+    ],
+    "background": {
+        "service_worker": "assd/background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://ais.usvisa-info.com/es-mx/niv/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "./assd/images/iconr.png"
+    },
+    "icons": {
+        "48": "./assd/images/icon48.png"
+    },
+    "options_page": "./assd/options.html"
+}
